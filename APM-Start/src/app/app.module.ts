@@ -14,12 +14,18 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { ProductModule } from './products/product.module';
 import { UserModule } from './user/user.module';
 import { MessageModule } from './messages/message.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     InMemoryWebApiModule.forRoot(ProductData, { delay: 1000 }),
+    RouterModule.forRoot([
+      { path: 'welcome', component: WelcomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      { path: '**', component: PageNotFoundComponent }
+    ]),
     ProductModule,
     UserModule,
     MessageModule
@@ -29,6 +35,6 @@ import { MessageModule } from './messages/message.module';
     WelcomeComponent,
     PageNotFoundComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
