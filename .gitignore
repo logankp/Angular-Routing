@@ -13,3 +13,5 @@ bower_components
 bin
 obj
 packages
+APM-Start/src/main.js
+APM-Start/src/main.js.map

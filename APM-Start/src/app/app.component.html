@@ -10,7 +10,7 @@
                     <a routerLink="/products">Product List</a>
                 </li>
                 <li>
-                    <a>Add Product</a>
+                    <a [routerLink]="['/products', 0, 'edit']">Add Product</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -30,6 +30,6 @@
         </div>
     </nav>
     <div class="container">
-        <router-outlet></router-outlet>>
+        <router-outlet></router-outlet>
     </div>
 </div>
